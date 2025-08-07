@@ -103,9 +103,7 @@ def plot_input_function(expr: str, x_range=(-10, 10), num_points=10000):
 
 def on_xlim_changed(ax, expr, num_points):
     """ x軸の範囲が変更されたときに呼ばれるコールバック関数 """
-
     def callback(_):
-        """ x軸の範囲が変更されたときに関数を再描画する """
         # x軸の範囲を取得
         xlim = ax.get_xlim()
         x = np.linspace(xlim[0], xlim[1], num_points)
@@ -122,7 +120,6 @@ def on_xlim_changed(ax, expr, num_points):
             ax.grid(True)
             ax.legend()
             ax.figure.canvas.draw_idle()
-
     return callback
 
 
